@@ -13,6 +13,7 @@ handler500 = "pinax.views.server_error"
 urlpatterns = patterns("",
     url(r"^$", direct_to_template, {
         "template": "homepage.html",
+	"extra_context" : {'signalmaster': settings.SIGNALMASTER},
     }, name="home"),
     url(r"^admin/", include(admin.site.urls)),
 )
