@@ -1,7 +1,31 @@
 {% extends "theme_base.html" %}
 
+{% load staticfiles %}
+
 {% block account_bar %}{% endblock %}
 
 {% block footer %}
     {% include "_footer.html" %}
+{% endblock %}
+
+    {% block extra_script %}
+ <script src="{% static 'js/socket.io.js' %}"></script>
+ <script src="{% static 'js/simplewebrtc.js' %}"></script>
+<script>
+var webrtc = new WebRTC({
+    //url of the sigmalmaster
+    url: 'http://192.168.100.100:8888',
+    // the id/element dom element that will hold "our" video
+    localVideoEl: 'localVideo',
+    // the id/element dom element that will hold remote videos
+    remoteVideosEl: 'remotesVideos',
+    // immediately ask for camera access
+    autoRequestMedia: true
+});
+// we have to wait until it's ready
+webrtc.on('readyToCall', function () {
+    // you can name it anything
+    webrtc.joinRoom('your awesome room name');
+});
+</script>
 {% endblock %}
