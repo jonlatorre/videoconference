@@ -149,6 +149,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     
     # project
+    "salas",
 ]
 
 FIXTURE_DIRS = [
