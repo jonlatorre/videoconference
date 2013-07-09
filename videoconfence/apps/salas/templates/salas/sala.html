@@ -1,0 +1,22 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Welcome" %}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block body %}
+<div class="row">
+    <h1>{% trans "Welcome to " %} {{ sala }} </h1>
+    la clave es: {{ clave }}
+        <div id="localVideo"></div>
+        <div id="remotesVideos"></div>
+    <p>
+        {% blocktrans %}
+	Esto es solo una prueba de videoconferencia sin auth ni nada.
+        {% endblocktrans %}
+    </p>
+<div>
+    
+{% endblock %}

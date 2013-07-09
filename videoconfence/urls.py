@@ -16,6 +16,7 @@ urlpatterns = patterns("",
 	"extra_context" : {'signalmaster': settings.SIGNALMASTER},
     }, name="home"),
     url(r"^admin/", include(admin.site.urls)),
+    url(r"^salas/", include("salas.urls")),
 )
 
 
